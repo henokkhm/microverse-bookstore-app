@@ -17,8 +17,8 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/categories" className={styles.mainNavLink}>
-              Categories
+            <NavLink to="/authors" className={styles.mainNavLink}>
+              Authors
             </NavLink>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Categories from './pages/Categories';
+import Authors from './pages/Authors';
 import Navbar from './components/Navbar';
 import styles from './styles/App.module.css';
 
@@ -13,7 +13,7 @@ function App() {
         <div className={styles.content}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="categories" element={<Categories />} />
+            <Route path="authors" element={<Authors />} />
           </Routes>
         </div>
       </main>
