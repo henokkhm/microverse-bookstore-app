@@ -1,5 +1,12 @@
+import BookList from '../components/BookList';
+
 function Home() {
-  return <h1>Home</h1>;
+  return (
+    <section>
+      <h1>Home</h1>
+      <BookList />
+    </section>
+  );
 }
 
 export default Home;
