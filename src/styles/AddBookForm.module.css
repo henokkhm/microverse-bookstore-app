@@ -24,9 +24,10 @@
 }
 
 .btn {
+  cursor: pointer;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #ff7400;
+  background-color: #006eff;
   transition: all 150ms ease-in-out;
   color: #fff;
   font-size: 1.25rem;
@@ -38,7 +39,7 @@
 }
 
 .btn:hover {
-  background-color: #c35800;
+  background-color: #0054c2;
 }
 
 .btn:active {

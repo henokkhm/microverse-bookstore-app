@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import styles from '../styles/Book.module.css';
+
 function Book({
   title, author, category, percentCompleted,
 }) {
@@ -21,6 +23,7 @@ function Book({
         <span>Percent Read: </span>
         <span>{percentCompleted}</span>
       </div>
+      <button className={styles.deleteBtn} type="button">Delete</button>
     </li>
   );
 }
