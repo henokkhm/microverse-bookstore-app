@@ -1,11 +1,13 @@
 [
   {
+    "id": 1,
     "title": "The Lord of the Rings",
     "author": "J.R.R. Tolkien",
     "category": "Fantasy",
     "percentRead": 71
   },
   {
+    "id": 2,
     "title": "A Game of Thrones",
     "author": "George R.R. Martin",
     "category": "Fantasy",
@@ -13,18 +15,21 @@
   },
 
   {
+    "id": 3,
     "title": "War and Peace",
     "author": "Leo Tolstoy",
     "category": "Historical Fiction",
     "percentRead": 24
   },
   {
+    "id": 4,
     "title": "Harry Potter and the Sorcerer's Stone",
     "author": "J.K. Rowling",
     "category": "Fantasy",
     "percentRead": 100
   },
   {
+    "id": 5,
     "title": "A Tale of Two Cities",
     "author": "Charles Dickens",
     "category": "Historical Fiction",
