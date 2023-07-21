@@ -1,5 +1,9 @@
 function Categories() {
-  return <h1>Categories</h1>;
+  return (
+    <section>
+      <h1>Categories</h1>
+    </section>
+  );
 }
 
 export default Categories;
