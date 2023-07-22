@@ -1,0 +1,47 @@
+.addBookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 22rem;
+  max-width: 32rem;
+  padding-top: 2rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.inputs {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(191, 191, 191);
+}
+
+.btn {
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #006eff;
+  transition: all 150ms ease-in-out;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.25rem;
+  max-width: max-content;
+  min-width: 10rem;
+}
+
+.btn:hover {
+  background-color: #0054c2;
+}
+
+.btn:active {
+  transform: translateY(3px);
+}
