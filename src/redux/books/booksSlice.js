@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import books from '../../data/books.json';
 
 const initialState = {
-  books,
+  books: [],
 };
 
 const booksSlice = createSlice({
