@@ -1,13 +1,20 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
+
 import styles from '../styles/AddBookForm.module.css';
 
 function AddBookForm() {
+  const dispatch = useDispatch();
+
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('form submitted');
+    dispatch(addBook({ title, author }));
+    setTitle('');
+    setAuthor('');
   };
 
   return (
