@@ -12,7 +12,7 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, { payload }) => {
       const { title, author } = payload;
-      const id = `item${state.booksList.length + 1}`;
+      const id = `${Math.floor(Math.random() * 10e10)}`;
       state.booksList.push({
         id, title, author, category: 'fiction',
       });
