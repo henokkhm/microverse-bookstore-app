@@ -1,38 +1,20 @@
 [
   {
-    "id": 1,
-    "title": "The Lord of the Rings",
-    "author": "J.R.R. Tolkien",
-    "category": "Fantasy",
-    "percentRead": 71
+    "item_id": "item1",
+    "title": "The Great Gatsby",
+    "author": "John Smith",
+    "category": "Fiction"
   },
   {
-    "id": 2,
-    "title": "A Game of Thrones",
-    "author": "George R.R. Martin",
-    "category": "Fantasy",
-    "percentRead": 43
-  },
-
-  {
-    "id": 3,
-    "title": "War and Peace",
+    "item_id": "item2",
+    "title": "Anna Karenina",
     "author": "Leo Tolstoy",
-    "category": "Historical Fiction",
-    "percentRead": 24
+    "category": "Fiction"
   },
   {
-    "id": 4,
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "author": "J.K. Rowling",
-    "category": "Fantasy",
-    "percentRead": 100
-  },
-  {
-    "id": 5,
-    "title": "A Tale of Two Cities",
-    "author": "Charles Dickens",
-    "category": "Historical Fiction",
-    "percentRead": 93
+    "item_id": "item3",
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "category": "Nonfiction"
   }
 ]
