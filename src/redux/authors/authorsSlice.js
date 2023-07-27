@@ -7,6 +7,11 @@ const initialState = {
 const authorsSlice = createSlice({
   name: 'authors',
   initialState,
+  reducers: {
+    checkStatus: (state) => state.status,
+  },
 });
+
+export const { checkStatus } = authorsSlice.actions;
 
 export default authorsSlice.reducer;
