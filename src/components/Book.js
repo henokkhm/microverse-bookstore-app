@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
 import styles from '../styles/Book.module.css';
 
 function Book({
-  title, author, category, percentCompleted,
+  id, title, author, category,
 }) {
+  const dispatch = useDispatch();
+
   return (
     <li>
       <div>
@@ -21,18 +25,24 @@ function Book({
       </div>
       <div>
         <span>Percent Read: </span>
-        <span>{percentCompleted}</span>
+        <span>{50}</span>
       </div>
-      <button className={styles.deleteBtn} type="button">Delete</button>
+      <button
+        className={styles.deleteBtn}
+        type="button"
+        onClick={() => dispatch(removeBook({ id }))}
+      >
+        Delete
+      </button>
     </li>
   );
 }
 
 Book.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  percentCompleted: PropTypes.number.isRequired,
 };
 
 export default Book;

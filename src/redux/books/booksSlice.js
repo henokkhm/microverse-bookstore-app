@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import books from '../../data/books.json';
+
 const initialState = {
-  books: [],
+  booksList: books,
 };
 
 const booksSlice = createSlice({
@@ -9,11 +11,16 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, { payload }) => {
-      const { title, category } = payload;
-      state.books.push({ title, category });
+      const { title, author } = payload;
+      const id = `item${state.booksList.length + 1}`;
+      state.booksList.push({
+        id, title, author, category: 'fiction',
+      });
     },
-    remove: (state, { payload }) => {
-      state.books = state.books.filter((book) => book.id !== payload.id);
+    removeBook: (state, { payload }) => {
+      state.booksList = state.booksList.filter(
+        (book) => book.id !== payload.id,
+      );
     },
   },
 });
