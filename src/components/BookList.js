@@ -18,10 +18,10 @@ function BookList() {
         {booksList.map((book) => (
           <Book
             key={book.id}
+            id={book.id}
             title={book.title}
             author={book.author}
             category={book.category}
-            percentCompleted={book.percentRead}
           />
         ))}
       </ul>
