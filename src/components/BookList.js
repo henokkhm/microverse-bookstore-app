@@ -1,12 +1,15 @@
+import { useSelector } from 'react-redux';
+
 import Book from './Book';
-import books from '../data/books.json';
 
 function BookList() {
+  const { booksList } = useSelector((state) => state.books);
+
   return (
     <div>
       <h2>My List of Books</h2>
       <ul>
-        {books.map((book) => (
+        {booksList.map((book) => (
           <Book
             key={book.id}
             title={book.title}
