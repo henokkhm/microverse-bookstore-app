@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getAllBooks } from '../../api/books-api';
+import { getAllBooks, postNewBook } from '../../api/books-api';
 
 export const getAllBooksFromAPI = createAsyncThunk(
   'books/getAllBooksFromAPI',
@@ -27,6 +27,25 @@ export const getAllBooksFromAPI = createAsyncThunk(
   },
 );
 
+export const postBookToAPI = createAsyncThunk(
+  'books/postBookToAPI',
+  async ({ title, author }, thunkAPI) => {
+    const bookData = {
+      item_id: `${Math.floor(Math.random() * 10e10)}`,
+      title,
+      author,
+      category: 'Fiction',
+    };
+
+    try {
+      const resp = await postNewBook(bookData);
+      return resp;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(`Something went wrong! ${error}`);
+    }
+  },
+);
+
 const initialState = {
   booksList: [],
   isLoadingAllBooks: false,
@@ -38,16 +57,6 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state, { payload }) => {
-      const { title, author } = payload;
-      const id = `${Math.floor(Math.random() * 10e10)}`;
-      state.booksList.push({
-        id,
-        title,
-        author,
-        category: 'Fiction',
-      });
-    },
     removeBook: (state, { payload }) => {
       state.booksList = state.booksList.filter(
         (book) => book.id !== payload.id,
@@ -65,6 +74,16 @@ const booksSlice = createSlice({
       })
       .addCase(getAllBooksFromAPI.rejected, (state) => {
         state.isLoadingAllBooks = false;
+      })
+
+      .addCase(postBookToAPI.pending, (state) => {
+        state.isPostingNewBook = true;
+      })
+      .addCase(postBookToAPI.fulfilled, (state) => {
+        state.isPostingNewBook = false;
+      })
+      .addCase(postBookToAPI.rejected, (state) => {
+        state.isPostingNewBook = false;
       });
   },
 });

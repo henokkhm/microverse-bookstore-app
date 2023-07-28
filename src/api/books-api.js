@@ -18,12 +18,10 @@ export const getAllBooks = async () => {
   );
 };
 
-export const postNewBook = async ({ title, author, id }) => {
+export const postNewBook = async (bookData) => {
   const url = `${BASE_URL}/apps/${APP_ID}/books`;
 
-  const data = { title, author, id };
-
-  const response = await axios.post(url, data);
+  const response = await axios.post(url, bookData);
 
   // Check if the response was successful
   if (response.status >= 200 && response.status < 300) {
