@@ -3,7 +3,13 @@ import { useSelector } from 'react-redux';
 import Book from './Book';
 
 function BookList() {
-  const { booksList } = useSelector((state) => state.books);
+  const { booksList, isLoadingAllBooks } = useSelector((state) => state.books);
+
+  if (isLoadingAllBooks) {
+    return (
+      <div>Loading books...</div>
+    );
+  }
 
   if (!booksList.length) {
     return (

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { postBookToAPI } from '../redux/books/booksSlice';
 
 import styles from '../styles/AddBookForm.module.css';
 
@@ -12,7 +12,7 @@ function AddBookForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({ title, author }));
+    dispatch(postBookToAPI({ title, author }));
     setTitle('');
     setAuthor('');
   };
