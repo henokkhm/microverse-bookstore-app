@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBookFromAPI } from '../redux/books/booksSlice';
 
 import styles from '../styles/Book.module.css';
 
@@ -30,7 +30,7 @@ function Book({
       <button
         className={styles.deleteBtn}
         type="button"
-        onClick={() => dispatch(removeBook({ id }))}
+        onClick={() => dispatch(deleteBookFromAPI({ id }))}
       >
         Delete
       </button>

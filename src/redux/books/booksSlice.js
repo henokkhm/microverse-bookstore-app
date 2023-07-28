@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getAllBooks, postNewBook } from '../../api/books-api';
+import { getAllBooks, postNewBook, deleteBook } from '../../api/books-api';
 
 export const getAllBooksFromAPI = createAsyncThunk(
   'books/getAllBooksFromAPI',
@@ -46,6 +46,18 @@ export const postBookToAPI = createAsyncThunk(
   },
 );
 
+export const deleteBookFromAPI = createAsyncThunk(
+  'books/deleteBookFromAPI',
+  async ({ id }, thunkAPI) => {
+    try {
+      const resp = await deleteBook(id);
+      return resp;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(`Something went wrong! ${error}`);
+    }
+  },
+);
+
 const initialState = {
   booksList: [],
   isLoadingAllBooks: false,
@@ -56,13 +68,7 @@ const initialState = {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    removeBook: (state, { payload }) => {
-      state.booksList = state.booksList.filter(
-        (book) => book.id !== payload.id,
-      );
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAllBooksFromAPI.pending, (state) => {
@@ -84,6 +90,16 @@ const booksSlice = createSlice({
       })
       .addCase(postBookToAPI.rejected, (state) => {
         state.isPostingNewBook = false;
+      })
+
+      .addCase(deleteBookFromAPI.pending, (state) => {
+        state.isDeletingBook = true;
+      })
+      .addCase(deleteBookFromAPI.fulfilled, (state) => {
+        state.isDeletingBook = false;
+      })
+      .addCase(deleteBookFromAPI.rejected, (state) => {
+        state.isDeletingBook = false;
       });
   },
 });

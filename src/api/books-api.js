@@ -34,8 +34,8 @@ export const postNewBook = async (bookData) => {
   );
 };
 
-export const deleteBook = async ({ bookId }) => {
-  const url = `${BASE_URL}/apps/${APP_ID}/books/${bookId}`;
+export const deleteBook = async (id) => {
+  const url = `${BASE_URL}/apps/${APP_ID}/books/${id}`;
 
   const response = await axios.delete(url);
 
