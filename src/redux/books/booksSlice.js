@@ -39,6 +39,7 @@ export const postBookToAPI = createAsyncThunk(
 
     try {
       const resp = await postNewBook(bookData);
+      thunkAPI.dispatch(getAllBooksFromAPI());
       return resp;
     } catch (error) {
       return thunkAPI.rejectWithValue(`Something went wrong! ${error}`);
@@ -51,6 +52,7 @@ export const deleteBookFromAPI = createAsyncThunk(
   async ({ id }, thunkAPI) => {
     try {
       const resp = await deleteBook(id);
+      thunkAPI.dispatch(getAllBooksFromAPI());
       return resp;
     } catch (error) {
       return thunkAPI.rejectWithValue(`Something went wrong! ${error}`);
