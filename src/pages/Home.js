@@ -4,7 +4,6 @@ import AddBookForm from '../components/AddBookForm';
 function Home() {
   return (
     <section>
-      <h1>Home</h1>
       <BookList />
       <AddBookForm />
     </section>

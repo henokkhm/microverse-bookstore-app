@@ -16,17 +16,17 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={styles.app}>
       <Navbar />
-      <main className={styles.app}>
-        <div className={styles.content}>
+      <main>
+        <div className={styles.container}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="authors" element={<Authors />} />
           </Routes>
         </div>
       </main>
-    </>
+    </div>
   );
 }
 

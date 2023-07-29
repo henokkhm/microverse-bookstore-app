@@ -1,12 +1,12 @@
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
-  background-color: rgb(253, 249, 244);
+  background-color: #f5f6fa;
 }
 
 section {
   min-width: 24rem;
-  max-width: 62rem;
+  max-width: 75rem;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
