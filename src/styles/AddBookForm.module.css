@@ -1,23 +1,26 @@
+.formWrapper {
+  padding: 3rem 0;
+}
+
+.formHeader {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
 .addBookForm {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
   min-width: 22rem;
-  max-width: 32rem;
   padding-top: 2rem;
 }
 
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.label {
-  font-weight: 600;
-}
-
 .inputs {
+  width: 100%;
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid rgb(191, 191, 191);
@@ -34,7 +37,7 @@
   font-weight: 700;
   border: none;
   border-radius: 0.25rem;
-  max-width: max-content;
+  width: 100%;
   min-width: 10rem;
 }
 
@@ -44,4 +47,16 @@
 
 .btn:active {
   transform: translateY(3px);
+}
+
+@media (min-width: 48rem) {
+  .addBookForm {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .btn {
+    margin-top: 0;
+    max-width: max-content;
+  }
 }
