@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteBookFromAPI } from '../redux/books/booksSlice';
 
 import styles from '../styles/Book.module.css';
+import progressImg from '../assets/progress.png';
 
 function Book({
   id, title, author, category,
@@ -37,13 +38,17 @@ function Book({
         </div>
       </div>
       <div className={styles.progress}>
-        <div>Progress Pie Chart</div>
-        <div>
+        <img
+          className={styles.progressPieChart}
+          src={progressImg}
+          alt={`pie chart showing ${percentCompleted}% completion`}
+        />
+        <div className={styles.progressStats}>
           <p className={styles.progressPercentage}>
             {percentCompleted.toFixed(0)}
             %
           </p>
-          <p>completed</p>
+          <p className={styles.progressPercentageLabel}>completed</p>
         </div>
       </div>
       <div className={styles.currentChapter}>
